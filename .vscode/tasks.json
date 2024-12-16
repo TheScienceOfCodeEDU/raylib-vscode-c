@@ -1,0 +1,15 @@
+{
+   "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build windows",
+            "type": "shell",
+            "command": "${workspaceFolder}/build-win.bat",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
