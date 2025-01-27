@@ -6,7 +6,10 @@
       "request": "launch",
       "target": "${workspaceRoot}/build/linux/main",
       "cwd": "${workspaceRoot}",
-      "valuesFormatting": "parseText"
+      "valuesFormatting": "parseText",
+      "env": {
+        "LD_LIBRARY_PATH": "$HOME/raylib:${env:LD_LIBRARY_PATH}"
+      }
     },
     {
       "name": "Debug mac",
