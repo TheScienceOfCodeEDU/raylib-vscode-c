@@ -5,10 +5,10 @@
       "type": "gdb",
       "request": "launch",
       "target": "${workspaceRoot}/build/linux/main",
-      "cwd": "${workspaceRoot}",
+      "cwd": "${workspaceRoot}/build/linux/",
       "valuesFormatting": "parseText",
       "env": {
-        "LD_LIBRARY_PATH": "$HOME/raylib:${env:LD_LIBRARY_PATH}"
+        "LD_LIBRARY_PATH": ":${env:LD_LIBRARY_PATH}"
       }
     },
     {
