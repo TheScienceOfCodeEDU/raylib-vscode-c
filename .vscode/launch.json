@@ -8,7 +8,7 @@
       "cwd": "${workspaceRoot}/build/linux/",
       "valuesFormatting": "parseText",
       "env": {
-        "LD_LIBRARY_PATH": ":${env:LD_LIBRARY_PATH}"
+        "LD_LIBRARY_PATH": "/usr/local/lib64/:${env:LD_LIBRARY_PATH}"
       }
     },
     {
