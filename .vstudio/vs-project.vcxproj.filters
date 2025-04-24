@@ -18,7 +18,7 @@
     <CopyFileToFolders Include="C:\raylib\lib\raylib.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.c">
+    <ClCompile Include="..\src\main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

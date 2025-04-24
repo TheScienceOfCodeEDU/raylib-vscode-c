@@ -4,18 +4,19 @@
       "name": "Debug linux",
       "type": "gdb",
       "request": "launch",
-      "target": "${workspaceRoot}/build/linux/main",
-      "cwd": "${workspaceRoot}/build/linux/",
+      "target": "${workspaceRoot}/bin/dbg-linux/run",
+      "cwd": "${workspaceRoot}/bin/dbg-linux/",
       "valuesFormatting": "parseText",
       "env": {
-        "LD_LIBRARY_PATH": "/usr/local/lib64/:${env:LD_LIBRARY_PATH}"
+        "LD_LIBRARY_PATH": "/usr/local/lib64/:${env:LD_LIBRARY_PATH}",
+        "ROOT_DIR": "${workspaceRoot}/root"
       }
     },
     {
       "name": "Debug mac",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceRoot}/build/mac/main",
+      "program": "${workspaceRoot}/bin/mac/main",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
@@ -27,7 +28,7 @@
       "name": "Debug windows",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/win/main.exe",
+      "program": "${workspaceFolder}/bin/win/main.exe",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
@@ -56,7 +57,7 @@
       "stopAtEntry": false,
       "externalConsole": false,
       "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/build/linux/main",
+      "program": "${workspaceFolder}/bin/linux/main",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

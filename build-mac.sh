@@ -1,4 +1,4 @@
 #!/bin/bash
-mkdir -p build/mac
-cp -r res build/mac/
-gcc src/main.c -g -ggdb -w -lraylib -o build/mac/main -std=c99 -pedantic
+mkdir -p bin/mac
+cp -r out/. bin/linux/
+gcc src/main.c -g -ggdb -w -lraylib -lm -o bin/mac/main -std=c99 -pedantic
