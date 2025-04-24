@@ -2,7 +2,7 @@
 
 #define RAYGUI_IMPLEMENTATION
 #include "../lib/raygui/src/raygui.h"
-#include "raymath.h"
+// #include "raymath.h"
 
 // ENV CONFIG
 #define ENV_APP_DIR     "APPDIR"      // Used by Linux AppImages
@@ -45,28 +45,28 @@ int main() {
 
   // GUI config
   bool showMessageBox = false;
-
-  
-  //sprintf(char *, const char *, ...)
-  GuiLoadStyle(from_root_dir("gui/style_genesis.rgs"));
-  //GuiSetStyle(DEFAULT, TEXT_SIZE, 20);
+  float font_size = GuiGetStyle(DEFAULT, TEXT_SIZE);
+  GuiLoadStyle(from_root_dir("gui/style_genesis.rgs"));  
 
   SetTargetFPS(60);
   while (!WindowShouldClose()) {
     BeginDrawing();
     ClearBackground(RAYWHITE);
-    DrawText("It works!", 20, 20, 20, BLACK);
+    DrawText(TextFormat("It works! %f", font_size), 20, 200, 20, BLACK);
     
     // GUI
+    if (GuiSliderBar((Rectangle){ 20, 20, 240, 30 }, "Font size", "Max", &font_size, 5, 50))
+      GuiSetStyle(DEFAULT, TEXT_SIZE, font_size);
+
     if (GuiButton((Rectangle){ 20, 45, 240, 30 }, "Show Message"))
-        showMessageBox = true;
+      showMessageBox = true;
 
     if (showMessageBox)
     {
-        int result = GuiMessageBox((Rectangle){ 20, 110, 500, 100 },
-            "#191#Message Box", "Hi! This is a message!", "Nice;Cool");
+      int result = GuiMessageBox((Rectangle){ 20, 110, 500, 100 },
+        "#191#Message Box", "Hi! This is a message!", "Nice;Cool");
 
-        if (result >= 0) showMessageBox = false;
+      if (result >= 0) showMessageBox = false;
     }
     EndDrawing();
   }
